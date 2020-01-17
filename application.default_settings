@@ -1,0 +1,6 @@
+ENV=development
+TESTING=false
+SECRET_KEY=abc
+SESSION_COOKIE_NAME=session
+APPLICATION_ROOT=/
+JSONIFY_MIMETYPE=application/json

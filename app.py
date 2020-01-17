@@ -3,11 +3,33 @@ import os
 import MongoUtil
 import json
 app = Flask(__name__)
+from recieveCommPort import ReceiveCommPort
+import serial
 
+
+OUTPUT=None
+
+@app.route('/start',methods=['GET'])
+def startreading():
+    global OUTPUT
+    if OUTPUT is None:
+        OUTPUT = ReceiveCommPort("COM3", 9600, 0, serial.PARITY_NONE, 1)
+    OUTPUT.start()
+    OUTPUT.start_reading()
+    return "start"
+
+@app.route('/stop',methods=['GET'])
+def stopreading():
+    global OUTPUT
+    OUTPUT.stop_reading()
+    OUTPUT.destroy()
+    OUTPUT=None
+    return "stop"
 
 @app.route('/')
 def status():
   return jsonify({"Server":"Running"}),203
+
 
 @app.route("/create-collections", methods=['POST'])
 def createDB():

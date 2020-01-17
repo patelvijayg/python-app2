@@ -1,12 +1,14 @@
 #pip install pyserial
 import  time
 from commPortUtil import CommPort
-
+import serial
 def getCOMMPort(portname,baudrate,timeout,parity,rtscts):
    return CommPort(port=portname, baudrate=baudrate, timeout=timeout, parity=parity, rtscts=rtscts)
 
-OUTPUT =getCOMMPort(r"\\.\CNCB0",9600,0,serial.PARITY_NONE,1)
-INPUT =getCOMMPort(r"\\.\CNCA0",9600,0,serial.PARITY_NONE,1)
+OUTPUT =getCOMMPort("COM3",9600,0,serial.PARITY_NONE,1)
+INPUT =getCOMMPort("COM4",9600,0,serial.PARITY_NONE,1)
+#OUTPUT =getCOMMPort(r"\\.\CNCB0",9600,0,serial.PARITY_NONE,1)
+#INPUT =getCOMMPort(r"\\.\CNCA0",9600,0,serial.PARITY_NONE,1)
 #INPUT = serial.Serial(r"\\.\CNCB0", 9600, timeout=0, parity=serial.PARITY_NONE, rtscts=1)
 i=0
 while i<3:
