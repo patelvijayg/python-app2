@@ -1,4 +1,7 @@
-/webapp/Include
-/webapp/Lib
-/webapp/Scripts
-/webapp/pyvenv.cfg
+.git
+.idea
+/venv/
+/venv/Lib
+/venv/Scripts
+pyvenv.cfg
+pip-selfcheck.json
