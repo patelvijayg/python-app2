@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <form action="/live-dashboard" >
+                <button type="submit" class="btn btn-primary btn-block">Live Dashboard</button>
+            </form>
+            <br>
+            <form action="/history-dashboard" >
+                <button type="submit" class="btn btn-primary btn-block">History Dashboard</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="Username" value="admin">
+                </div>
+                <div class="form-group">
+                    <label for="pass">Password</label>
+                    <input type="password" class="form-control" name="pass" placeholder="Password" value="password">
+                </div>
+                <!--<input type="text" class="form-control" name="username2" placeholder="Username1">-->
+                <button type="submit" class="btn btn-primary btn-block">Log In</button>
+                <label>If you</label><a href="/forgot-passowrdd"> Forgot password ?</a>
+                <label>If you are</label><a href="/singup"> Sing Up</a>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
